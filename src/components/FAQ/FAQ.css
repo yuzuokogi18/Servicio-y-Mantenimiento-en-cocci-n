@@ -1,0 +1,199 @@
+.faq {
+  width: 100%;
+  padding: 100px 20px;
+  background: #f7f1ec;
+}
+
+.faq-container {
+  max-width: 1250px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+  align-items: center;
+}
+
+/* LEFT */
+.faq-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.faq-tag {
+  width: fit-content;
+
+  padding: 8px 18px;
+
+  border-radius: 30px;
+
+  background: #ffe5d3;
+
+  color: #ff6b00;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-bottom: 20px;
+}
+
+.faq-left h2 {
+  font-size: 52px;
+  line-height: 1.1;
+
+  color: #111;
+
+  margin-bottom: 20px;
+}
+
+.faq-line {
+  width: 70px;
+  height: 4px;
+
+  background: #ff6b00;
+
+  border-radius: 10px;
+
+  margin-bottom: 35px;
+}
+
+.faq-left p {
+  color: #666;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  max-width: 520px;
+
+  margin-bottom: 40px;
+}
+
+.whatsapp-btn {
+  width: fit-content;
+
+  padding: 18px 30px;
+
+  border: 2px solid #ff6b00;
+
+  background: white;
+
+  color: #222;
+
+  border-radius: 12px;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background: #ff6b00;
+  color: white;
+
+  transform: translateY(-3px);
+}
+
+/* RIGHT */
+.faq-right {
+  background: #fff;
+
+  border-radius: 24px;
+
+  padding: 20px 30px;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.08);
+}
+
+.faq-card {
+  padding: 24px 0;
+
+  border-bottom: 1px solid #ececec;
+}
+
+.faq-card:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  cursor: pointer;
+}
+
+.faq-question h3 {
+  font-size: 22px;
+  color: #222;
+
+  margin: 0;
+}
+
+.faq-question span {
+  font-size: 22px;
+  color: #555;
+
+  transition: 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* ANSWER */
+.faq-answer {
+  max-height: 0;
+
+  overflow: hidden;
+
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease;
+
+  opacity: 0;
+}
+
+.faq-answer.open {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.faq-answer p {
+  margin-top: 18px;
+
+  color: #666;
+
+  line-height: 1.8;
+
+  font-size: 17px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+
+  .faq-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .faq-left h2 {
+    font-size: 40px;
+  }
+
+  .faq-question h3 {
+    font-size: 18px;
+  }
+
+  .faq-left p {
+    font-size: 16px;
+  }
+
+}

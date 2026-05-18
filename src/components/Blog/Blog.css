@@ -1,0 +1,358 @@
+.blog {
+  width: 100%;
+  padding: 110px 8%;
+  background: #f8f8f8;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BACKGROUND */
+.blog::before {
+  content: '';
+
+  position: absolute;
+
+  top: -200px;
+  right: -150px;
+
+  width: 450px;
+  height: 450px;
+
+  background: rgba(255, 102, 0, 0.08);
+
+  filter: blur(120px);
+
+  border-radius: 50%;
+}
+
+.blog__container {
+  max-width: 1300px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* HEADER */
+.blog__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 20px;
+  flex-wrap: wrap;
+
+  margin-bottom: 70px;
+}
+
+.blog__tag {
+  display: inline-block;
+
+  padding: 8px 16px;
+
+  border-radius: 30px;
+
+  background: #ffe8db;
+  color: #ff6600;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  margin-bottom: 18px;
+}
+
+.blog__header h2 {
+  font-size: 58px;
+  line-height: 1.1;
+
+  color: #111;
+
+  margin-bottom: 16px;
+}
+
+.blog__line {
+  width: 90px;
+  height: 5px;
+
+  background: linear-gradient(
+    90deg,
+    #ff6600,
+    #ff8c3a
+  );
+
+  border-radius: 20px;
+}
+
+/* CARDS */
+.blog__cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 30px;
+}
+
+/* CARD */
+.blog__card {
+  background: rgba(255,255,255,0.9);
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  border: 1px solid #eee;
+
+  transition: .4s ease;
+
+  position: relative;
+}
+
+.blog__card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.08),
+    0 0 25px rgba(255,102,0,0.08);
+}
+
+/* SHINE */
+.blog__card::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+
+  transition: .8s;
+}
+
+.blog__card:hover::before {
+  left: 120%;
+}
+
+/* IMAGE */
+.blog__image {
+  width: 100%;
+  height: 260px;
+
+  object-fit: cover;
+
+  transition: .4s ease;
+}
+
+.blog__card:hover .blog__image {
+  transform: scale(1.05);
+}
+
+/* CONTENT */
+.blog__content {
+  padding: 28px;
+}
+
+.blog__category {
+  display: inline-block;
+
+  padding: 6px 14px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  margin-bottom: 20px;
+
+  color: #555;
+
+  background: #fafafa;
+}
+
+.blog__content h3 {
+  font-size: 30px;
+  line-height: 1.3;
+
+  color: #1d1d1d;
+
+  margin-bottom: 35px;
+
+  transition: .3s;
+}
+
+.blog__card:hover h3 {
+  color: #ff6600;
+}
+
+/* FOOTER */
+.blog__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 22px;
+
+  border-top: 1px solid #eee;
+}
+
+.blog__footer p {
+  color: #888;
+  font-size: 14px;
+}
+
+.read-more-btn {
+  border: none;
+  background: transparent;
+
+  color: #ff6600;
+
+  font-weight: 700;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.read-more-btn:hover {
+  letter-spacing: 1px;
+}
+
+/* MODAL */
+.blog-modal {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+
+  padding: 20px;
+}
+
+.blog-modal-content {
+  background: white;
+
+  width: 100%;
+  max-width: 850px;
+
+  border-radius: 24px;
+
+  overflow-y: auto;
+
+  max-height: 90vh;
+
+  position: relative;
+
+  animation: modalShow .4s ease;
+}
+
+.modal-image {
+  width: 100%;
+  height: 350px;
+
+  object-fit: cover;
+}
+
+.blog-modal-content h2 {
+  font-size: 40px;
+  color: #111;
+
+  margin: 20px 30px 10px;
+}
+
+.modal-date {
+  margin: 0 30px 30px;
+  color: #888;
+}
+
+.modal-text {
+  padding: 0 30px 40px;
+}
+
+.modal-text p {
+  color: #555;
+  line-height: 1.9;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.close-modal {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #ff6600;
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+/* ANIMATION */
+@keyframes modalShow {
+  from {
+    opacity: 0;
+    transform: scale(.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .blog {
+    padding: 80px 20px;
+  }
+
+  .blog__header h2 {
+    font-size: 38px;
+  }
+
+  .blog__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .blog__content h3 {
+    font-size: 24px;
+  }
+
+  .blog-modal-content h2 {
+    font-size: 28px;
+  }
+
+  .modal-text p {
+    font-size: 16px;
+  }
+
+}

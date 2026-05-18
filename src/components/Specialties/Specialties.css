@@ -1,0 +1,330 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.specialties{
+  width: 100%;
+
+  background: #fdf5ef;
+
+  padding: 120px 80px;
+
+  display: flex;
+  gap: 80px;
+
+  overflow: hidden;
+}
+
+/* LEFT */
+
+.specialties-left{
+  width: 35%;
+
+  opacity: 0;
+  transform: translateX(-120px);
+
+  transition: 1s ease;
+}
+
+.specialties-left.show{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.specialties-badge{
+  display: inline-block;
+
+  background: #ffe8d9;
+  color: #ff6b00;
+
+  padding: 10px 20px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.specialties-left h2{
+  margin-top: 20px;
+
+  font-size: 60px;
+  line-height: 65px;
+  font-weight: 900;
+
+  color: #111;
+}
+
+.specialties-line{
+  width: 90px;
+  height: 5px;
+
+  background: #ff6b00;
+
+  margin-top: 25px;
+
+  border-radius: 20px;
+}
+
+.specialties-left p{
+  margin-top: 50px;
+
+  color: #666;
+
+  font-size: 20px;
+  line-height: 38px;
+}
+
+.specialty-info{
+  margin-top: 25px;
+
+  background: white;
+
+  padding: 25px 30px;
+
+  border-radius: 18px;
+
+  border: 1px solid #eee;
+
+  font-weight: bold;
+
+  font-size: 18px;
+
+  transition: .4s ease;
+}
+
+.specialty-info:hover{
+  transform: translateX(10px);
+
+  box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+/* RIGHT */
+
+.specialties-right{
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 20px;
+}
+
+/* CARD */
+
+.specialty-card{
+  background: white;
+
+  border: 1px solid #eee;
+
+  border-radius: 18px;
+
+  padding: 25px;
+
+  font-size: 18px;
+
+  line-height: 35px;
+
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateX(120px);
+
+  transition:
+    1s ease,
+    transform .4s ease,
+    box-shadow .4s ease;
+}
+
+/* APARECE DE LADO */
+
+.specialty-card.show{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* DELAY */
+
+.specialty-card:nth-child(1){ transition-delay: .1s; }
+.specialty-card:nth-child(2){ transition-delay: .2s; }
+.specialty-card:nth-child(3){ transition-delay: .3s; }
+.specialty-card:nth-child(4){ transition-delay: .4s; }
+.specialty-card:nth-child(5){ transition-delay: .5s; }
+.specialty-card:nth-child(6){ transition-delay: .6s; }
+.specialty-card:nth-child(7){ transition-delay: .7s; }
+.specialty-card:nth-child(8){ transition-delay: .8s; }
+.specialty-card:nth-child(9){ transition-delay: .9s; }
+.specialty-card:nth-child(10){ transition-delay: 1s; }
+
+/* HOVER */
+
+.specialty-card::before{
+  content: '';
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 5px;
+  height: 0;
+
+  background: #ff6b00;
+
+  transition: .4s;
+}
+
+.specialty-card:hover::before{
+  height: 100%;
+}
+
+.specialty-card:hover{
+  transform: translateY(-8px) translateX(5px);
+
+  box-shadow: 0 18px 40px rgba(0,0,0,.08);
+}
+
+.big{
+  min-height: 180px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* TABLET */
+
+@media(max-width:1200px){
+
+  .specialties{
+    flex-direction: column;
+
+    gap: 50px;
+  }
+
+  .specialties-left{
+    width: 100%;
+  }
+
+  .specialties-right{
+    width: 100%;
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .specialties{
+    padding: 90px 18px;
+
+    gap: 40px;
+  }
+
+  .specialties-left{
+    width: 100%;
+  }
+
+  .specialties-badge{
+    font-size: 12px;
+
+    padding: 8px 18px;
+  }
+
+  .specialties-left h2{
+    margin-top: 18px;
+
+    font-size: 42px;
+    line-height: 48px;
+  }
+
+  .specialties-line{
+    width: 70px;
+    height: 4px;
+
+    margin-top: 18px;
+  }
+
+  .specialties-left p{
+    margin-top: 30px;
+
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .specialty-info{
+    margin-top: 18px;
+
+    padding: 18px 20px;
+
+    font-size: 15px;
+
+    border-radius: 14px;
+  }
+
+  .specialties-right{
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .specialty-card{
+    padding: 22px 20px;
+
+    font-size: 15px;
+
+    line-height: 28px;
+
+    border-radius: 16px;
+
+    min-height: auto;
+  }
+
+  .big{
+    min-height: auto;
+  }
+
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media(max-width:480px){
+
+  .specialties{
+    padding: 80px 14px;
+  }
+
+  .specialties-left h2{
+    font-size: 34px;
+    line-height: 40px;
+  }
+
+  .specialties-left p{
+    font-size: 15px;
+    line-height: 28px;
+  }
+
+  .specialty-info{
+    padding: 16px 18px;
+
+    font-size: 14px;
+  }
+
+  .specialty-card{
+    padding: 18px 16px;
+
+    font-size: 14px;
+
+    line-height: 25px;
+  }
+
+}

@@ -1,0 +1,315 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar{
+  width: 100%;
+  height: 95px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+
+  position: relative;
+  z-index: 100;
+}
+
+/* IZQUIERDA */
+
+.left-section{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-width: 0;
+}
+
+.logo{
+  width: 70px;
+  height: 70px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+.left-section h1{
+  font-size: 28px;
+  color: #f97316;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* MENU */
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: #111;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: .3s;
+}
+
+.nav-links a:hover{
+  color: #f97316;
+}
+
+/* BOTON TELEFONO */
+
+.phone-btn{
+  height: 48px;
+  padding: 0 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: 1.5px solid #f97316;
+  border-radius: 12px;
+
+  background: white;
+
+  color: #111;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: .3s;
+
+  white-space: nowrap;
+
+  width: auto;
+
+  line-height: 1;
+
+  flex-shrink: 0;
+}
+
+.phone-btn span{
+  display: flex;
+  align-items: center;
+}
+
+.phone-btn svg{
+  font-size: 15px;
+}
+
+.phone-btn:hover{
+  background: #f97316;
+  color: white;
+}
+
+/* BOTON HAMBURGUESA */
+
+.menu-btn{
+  display: none;
+
+  background: none;
+  border: none;
+
+  font-size: 26px;
+
+  cursor: pointer;
+
+  color: #111;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+  .left-section h1{
+    font-size: 22px;
+  }
+
+  .nav-links{
+    gap: 22px;
+  }
+
+}
+
+/* TABLET */
+
+@media(max-width:950px){
+
+  .navbar{
+    height: auto;
+    padding: 18px 20px;
+
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .left-section h1{
+    font-size: 22px;
+  }
+
+}
+
+/* MOVIL */
+
+@media(max-width:700px){
+
+  .navbar{
+    height: auto;
+
+    padding: 14px 16px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 16px;
+  }
+
+  /* HEADER */
+
+  .left-section{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 8px;
+  }
+
+  .logo{
+    width: 58px;
+    height: 58px;
+  }
+
+  .left-section h1{
+    font-size: 20px;
+
+    white-space: normal;
+
+    line-height: 1.2;
+  }
+
+  /* HAMBURGUESA */
+
+  .menu-btn{
+    display: flex;
+
+    position: absolute;
+
+    top: 18px;
+    right: 16px;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.06);
+
+    font-size: 20px;
+
+    z-index: 999;
+  }
+
+  /* MENU */
+
+  .nav-links{
+    display: none;
+
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+  }
+
+  .nav-links.active{
+    display: flex;
+  }
+
+  .nav-links a{
+    width: 100%;
+
+    text-align: center;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #f7f7f7;
+  }
+
+  .nav-links a:hover{
+    background: #f97316;
+    color: white;
+  }
+
+  .phone-btn{
+    width: 100%;
+    max-width: 320px;
+
+    height: 46px;
+
+    font-size: 14px;
+
+    padding: 0 18px;
+  }
+
+}
+
+/* MOVILES PEQUEÑOS */
+
+@media(max-width:400px){
+
+  .left-section h1{
+    font-size: 17px;
+  }
+
+  .nav-links a{
+    font-size: 13px;
+  }
+
+  .phone-btn{
+    font-size: 13px;
+  }
+
+  .phone-btn span{
+    font-size: 13px;
+  }
+
+}
